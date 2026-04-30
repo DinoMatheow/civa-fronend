@@ -31,7 +31,7 @@ return(
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="/search">Search</Link>
+          <Link to="/search">Buscador</Link>
         </li>
       </ul>
     </div>
@@ -40,7 +40,7 @@ return(
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       <li><Link to="/">Inicio</Link></li>
-      <li><Link to="/search">Search</Link></li>
+      <li><Link to="/search">Buscador</Link></li>
     </ul>
   </div>
   <div className="navbar-end">
