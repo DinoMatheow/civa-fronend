@@ -1,4 +1,4 @@
-# 🚌 Civa App — Frontend
+#  Civa App — Frontend
  
 Interfaz web para consultar y buscar buses de la empresa Civa. Permite listar todos los buses disponibles y buscar uno específico por ID.
  
