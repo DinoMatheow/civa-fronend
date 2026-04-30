@@ -3,7 +3,7 @@ import { CustomMenu } from "../../components/custom/CustomMenu"
 
 export const BusLayouts = () => {
     return(
-        <div>
+        <div className="">
         <CustomMenu />
 
 

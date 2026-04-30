@@ -1,6 +1,6 @@
 import type { CivaResponse } from "../interfaces/civa.response";
 
-export const getListBus = async () => {
+export const getListBus = async ():Promise<CivaResponse[]> => {
      const response = await fetch(`http://localhost:8080/bus`);
 
      const data = await response.json();
