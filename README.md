@@ -51,4 +51,13 @@ npm run dev
 ```
  
 La app estará disponible en `http://localhost:5173`
+
+## Ramas
+
+| Rama  | Descripción                        |
+|-------|------------------------------------|
+| main  | Versión estable lista para probar  |
+| dev   | Desarrollo, puede ser inestable    |
+
+> Para ejecutar el proyecto use la rama `main`.
  
