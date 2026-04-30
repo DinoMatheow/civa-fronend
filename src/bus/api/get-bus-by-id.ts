@@ -1,7 +1,7 @@
 import type { CivaResponse } from "../interfaces/civa.response";
 
 export const getBusById =  async(id:number): Promise<CivaResponse | null> =>{
-   const response = await fetch(`http://localhost:8080/${id}`);
+   const response = await fetch(`http://localhost:8080/bus/${id}`);
    
         const data = await response.json();
    
