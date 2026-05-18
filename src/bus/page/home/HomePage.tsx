@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getListBus } from "../../api/get-list-bus";
 import type { CivaResponse } from "../../interfaces/civa.response";
+import { CustomPagination } from "../../../components/custom/CustomPagination";
 
 export const HomePage =  () => {
 
@@ -55,6 +56,7 @@ export const HomePage =  () => {
 
 
       {/* <pre>{ JSON.stringify(busList, null)}</pre> */}
+          <CustomPagination totalPages={5} />
       </div>
     )
 
