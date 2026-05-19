@@ -4,12 +4,12 @@ interface Props {
 }
 
 export const CustomPagination = ({ totalPages }: Props) => {
-    const page = 1;
+    const page = 1 as number;
 
     return (
     <div>
         <nav className="flex items-center gap-x-1 justify-center" aria-label="Pagination">
-            <button type="button" className="btn btn-text">Anteriores </button>
+            <button type="button" className="btn btn-text" disabled={page === 1} >Anteriores </button>
            
             <div className="flex items-center gap-x-1">
                  {
@@ -25,7 +25,7 @@ export const CustomPagination = ({ totalPages }: Props) => {
                 {/* <button type="button" className="btn btn-text btn-square aria-[current='page']:text-bg-primary" aria-current="page"> 2 </button> */}
                 {/* <button type="button" className="btn btn-text btn-square aria-[current='page']:text-bg-primary">3</button> */}
             </div>
-            <button type="button" className="btn btn-text">Siguientes</button>
+            <button type="button" className="btn btn-text" disabled={page === totalPages} >Siguientes</button>
             </nav>
     </div>
     
