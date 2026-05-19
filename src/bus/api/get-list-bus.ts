@@ -3,8 +3,8 @@ import type { Content, ListBuses } from "../interfaces/civa.pagination.reponse";
 
 
 
-export const getListBus = async ():Promise<Content[]> => {
-     const response = await fetch(`http://localhost:8080/bus`);
+export const getListBus = async (page: number ):Promise<Content[]> => {
+     const response = await fetch(`http://localhost:8080/bus?page=${page}&size=5`);
 
      const data:ListBuses = await response.json();
 

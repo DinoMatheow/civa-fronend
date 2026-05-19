@@ -6,14 +6,15 @@ import { CustomPagination } from "../../../components/custom/CustomPagination";
 export const HomePage =  () => {
 
   const [busList, setBusList] = useState<CivaResponse[]>([]);
+  const [page, setPage] = useState<number>(0);
 
   useEffect(()=> {
     const fetchBuses = async ()=> {
-      const data = await getListBus();
+      const data = await getListBus(page);
       setBusList(data);
     };
     fetchBuses();
-  }, [])
+  }, [page]);
 
 
     return (
@@ -56,7 +57,11 @@ export const HomePage =  () => {
 
 
       {/* <pre>{ JSON.stringify(busList, null)}</pre> */}
-          <CustomPagination totalPages={5} />
+          <CustomPagination 
+          totalPages={5} 
+          currentPage={page}
+          onPageChange={(newPage) => setPage(newPage)}
+          />
       </div>
     )
 
