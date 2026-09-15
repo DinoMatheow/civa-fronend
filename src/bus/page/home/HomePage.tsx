@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
+  import { useEffect, useState } from "react"
 import { getListBus } from "../../api/get-list-bus";
 import type { CivaResponse } from "../../interfaces/civa.response";
 import { CustomPagination } from "../../../components/custom/CustomPagination";
 import { getBusesByPage } from "../../actions/get-buses-by-page";
+import { useQuery } from "@tanstack/react-query";
 
 export const HomePage =  () => {
 
@@ -17,12 +18,20 @@ export const HomePage =  () => {
     fetchBuses();
   }, [page]);
 
+  const { data } = useQuery({
+    queryKey: ['buses', page],
+    queryFn: () => getBusesByPage(page),
+    staleTime: 1000 * 60 * 5, 
+  });
 
-  useEffect(()=>{
-    getBusesByPage(0).then((buses) =>{
-      console.log({ buses })
-    });
-  }, []);
+  console.log({ data });
+
+
+  // useEffect(()=>{
+  //   getBusesByPage(0).then((buses) =>{
+  //     console.log({ buses })
+  //   });
+  // }, []);
 
 
     return (
@@ -66,7 +75,7 @@ export const HomePage =  () => {
 
       {/* <pre>{ JSON.stringify(busList, null)}</pre> */}
           <CustomPagination 
-          totalPages={5} 
+          totalPages={5}  
           currentPage={page}
           onPageChange={(newPage) => setPage(newPage)}
           />
