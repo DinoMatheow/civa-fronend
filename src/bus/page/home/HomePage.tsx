@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getListBus } from "../../api/get-list-bus";
 import type { CivaResponse } from "../../interfaces/civa.response";
 import { CustomPagination } from "../../../components/custom/CustomPagination";
+import { getBusesByPage } from "../../actions/get-buses-by-page";
 
 export const HomePage =  () => {
 
@@ -15,6 +16,13 @@ export const HomePage =  () => {
     };
     fetchBuses();
   }, [page]);
+
+
+  useEffect(()=>{
+    getBusesByPage(0).then((buses) =>{
+      console.log({ buses })
+    });
+  }, []);
 
 
     return (

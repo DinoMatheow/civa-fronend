@@ -1,3 +1,7 @@
+
+
+
+
 import type { CivaResponse } from "../interfaces/civa.response";
 
 export const getBusById =  async(id:number): Promise<CivaResponse | null> =>{
