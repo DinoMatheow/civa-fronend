@@ -1,6 +1,4 @@
 import type { Content, ListBuses } from "../interfaces/civa.pagination.reponse";
-// import type { CivaResponse } from "../interfaces/civa.response";
-
 
 
 export const getListBus = async (page: number ):Promise<Content[]> => {
