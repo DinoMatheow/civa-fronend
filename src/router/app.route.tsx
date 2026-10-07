@@ -1,19 +1,19 @@
 import { createBrowserRouter } from "react-router";
 import { HomePage } from "../bus/page/home/HomePage";
 // import { SearchPage } from "../bus/page/search/SearchPage";
-import { BusLayouts } from "../bus/layouts/BusLayouts";
 import { lazy } from "react";
+import { CivaLayout } from "../layouts/CivaLayout";
 
 const SearchPage = lazy(()=> import("../bus/page/search/SearchPage"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <BusLayouts />,
+    element: <CivaLayout />,
     children: [
   {
     index: true,
-    element: <HomePage />,
+    element: <CivaLayout />,
   },
   {
     path: "search",
