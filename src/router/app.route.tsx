@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     children: [
   {
     index: true,
-    element: <CivaLayout />,
+    element: <HomePage />,
   },
   {
     path: "search",
