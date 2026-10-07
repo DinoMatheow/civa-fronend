@@ -8,13 +8,7 @@ export const HomePage =  () => {
 
   const [page, setPage] = useState<number>(0);
 
-  // useEffect(()=> {
-  //   const fetchBuses = async ()=> {
-  //     const data = await getListBus(page);
-  //     setBusList(data);
-  //   };
-  //   fetchBuses();
-  // }, [page]);
+
 
   const { data: busResponse } = useQuery({
     queryKey: ['buses', page],
@@ -25,11 +19,6 @@ export const HomePage =  () => {
   console.log({ busResponse});
 
 
-  // useEffect(()=>{
-  //   getBusesByPage(0).then((buses) =>{
-  //     console.log({ buses })
-  //   });
-  // }, []);
 
 
     return (
