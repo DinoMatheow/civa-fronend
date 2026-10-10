@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { ArrowLeftRight, CalendarDays, CircleDot, MapPin, Search } from "lucide-react";
 import { SearchField } from "../../components/custom/CustomSearchField";
+import { useNavigate, useSearchParams } from "react-router";
+
+
 
 export const TripSearchBar = () => {
-  const [origin, setOrigin] = useState("Arequipa, Peru");
-  const [destination, setDestination] = useState("Ayacucho, Peru");
-  const [departure, setDeparture] = useState("");
-  const [returnDate, setReturnDate] = useState("");
+   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  const [origin, setOrigin] = useState(searchParams.get("origin") ?? "");
+  const [destination, setDestination] = useState(searchParams.get("destination") ?? "");
+  const [departure, setDeparture] = useState(searchParams.get("departure") ?? "");
+  const [returnDate, setReturnDate] = useState(searchParams.get("returnDate") ?? "");
 
   const handleSwap = () => {
     setOrigin(destination);
@@ -15,7 +21,14 @@ export const TripSearchBar = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ origin, destination, departure, returnDate });
+
+    const params = new URLSearchParams();
+    if (origin) params.set("origin", origin);
+    if (destination) params.set("destination", destination);
+    if (departure) params.set("departure", departure);
+    if (returnDate) params.set("returnDate", returnDate);
+
+    navigate(`/search?${params.toString()}`);
   };
 
   return (
@@ -64,3 +77,4 @@ export const TripSearchBar = () => {
     </form>
   );
 };
+

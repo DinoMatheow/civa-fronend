@@ -1,5 +1,5 @@
 export interface TripResponse {
-    content:          ListTrips[];
+    content:          Trip[];
     pageable:         Pageable;
     totalElements:    number;
     totalPages:       number;
@@ -12,7 +12,7 @@ export interface TripResponse {
     empty:            boolean;
 }
 
-export interface ListTrips {
+export interface Trip {
     id:              number;
     tripCode:        string;
     departureTime:   Date;

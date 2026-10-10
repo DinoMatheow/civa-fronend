@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import { Outlet } from "react-router";
-import { TripSearchBar } from "../bus/components/TripSearchBar";
+import { TripSearchBar } from "../GestionApp/components/TripSearchBar";
 
 const footerColumns = [
   {

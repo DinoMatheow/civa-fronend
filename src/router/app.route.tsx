@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import { HomePage } from "../bus/page/home/HomePage";
-// import { SearchPage } from "../bus/page/search/SearchPage";
 import { lazy } from "react";
 import { CivaLayout } from "../layouts/CivaLayout";
 
