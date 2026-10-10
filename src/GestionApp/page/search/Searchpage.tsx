@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { searchTripsByPage } from "../../actions/get-trip-by-page";
+import { TripGrid } from "../../components/TripGrid";
 
 export const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -25,5 +26,5 @@ export const SearchPage = () => {
   if (isError) return <p>Error: {error.message}</p>;
   if (data?.content.length === 0) return <p>No hay viajes para esa ruta y fecha.</p>;
 
-  return <pre>{JSON.stringify(data?.content, null, 2)}</pre>;
+  return <TripGrid trips={data?.content ?? []} />;
 };

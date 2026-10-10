@@ -29,7 +29,7 @@ export const HomePage =  () => {
             Gestor de Buses
           
           </h1>
-     <BusGrid buses={busResponse?.content ?? []} />
+     {/* <BusGrid buses={busResponse?.content ?? []} />
      
 
 
@@ -37,11 +37,12 @@ export const HomePage =  () => {
 
 
       {/* <pre>{ JSON.stringify(busList, null)}</pre> */}
-          <CustomPagination 
+          {/* <CustomPagination 
           totalPages={5}  
           currentPage={page}
           onPageChange={(newPage) => setPage(newPage)}
-          />
+          /> */} 
+
       </div>
     )
 
