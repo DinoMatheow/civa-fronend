@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
-import { HomePage } from "../bus/page/home/HomePage";
 import { lazy } from "react";
 import { CivaLayout } from "../layouts/CivaLayout";
+import { HomePage } from "../GestionApp/page/home/Homepage";
 
-const SearchPage = lazy(()=> import("../bus/page/search/SearchPage"));
+const SearchPage = lazy(()=> import("../GestionApp/page/search/Searchpage").then(module => ({ default: module.SearchPage })));
 
 export const router = createBrowserRouter([
   {
