@@ -1,6 +1,7 @@
 import { User } from "lucide-react";
 import { Outlet } from "react-router";
 import { TripSearchBar } from "../components/TripSearchBar";
+import { Navbar } from "../../components/custom/CustomNavbar";
 
 const footerColumns = [
   {
@@ -20,6 +21,7 @@ export const CivaLayout = () => {
     <div className="flex min-h-screen flex-col bg-white">
       {/* HEADER */}
       <header className="sticky top-0 z-20 bg-white shadow-md">
+        <Navbar />
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-center justify-between pt-3">
             <span className="text-3xl font-black italic tracking-tight text-[#572a85]">CIVA</span>
