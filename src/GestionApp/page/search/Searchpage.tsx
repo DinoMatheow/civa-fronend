@@ -28,3 +28,7 @@ export const SearchPage = () => {
 
   return <TripGrid trips={data?.content ?? []} />;
 };
+
+
+
+export default SearchPage;
