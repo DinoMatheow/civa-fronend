@@ -34,6 +34,7 @@ export const TripSearchBar = () => {
   };
 
   return (
+    <div className="w-full rounded-3xl bg-white px-4 shadow-xl md:rounded-[2.5rem] md:px-8">
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 py-3 md:flex-row md:items-center">
       <div className="flex flex-1 items-center">
         <SearchSelect icon={CircleDot} label="Origen" value={originCityId}
@@ -67,5 +68,7 @@ export const TripSearchBar = () => {
         <Search size={22} />
       </button>
     </form>
+
+    </div>
   );
 };

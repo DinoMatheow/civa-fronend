@@ -1,3 +1,5 @@
+import { BannerCiva } from "../../../shared/BannerCiva";
+import { TripSearchBar } from "../../components/TripSearchBar";
 
 const destinos = [
   { name: "Lima", image: "/images/lima.jpg", className: "col-span-2 row-span-2" },
@@ -25,6 +27,7 @@ export const HomePage = () => {
     <div className="min-h-screen bg-white font-sans text-slate-800">
       {/* ============ HERO ============ */}
       <section className="relative">
+        <BannerCiva />
         <div className="relative h-56 overflow-hidden bg-purple-900 sm:h-64">
           <img
             src="/images/hero.jpg"
@@ -33,35 +36,12 @@ export const HomePage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-purple-700/60" />
           <p className="relative z-10 flex h-full items-center justify-end px-6 text-right text-2xl font-semibold italic text-white sm:px-16 sm:text-4xl">
-            Aplican Términos y Condiciones
+            Aplican Términos y Condiciones 
+        <TripSearchBar />
           </p>
         </div>
 
         {/* Buscador de pasajes (maqueta) */}
-        <div className="relative z-20 mx-auto -mt-12 max-w-5xl px-6">
-          <form className="grid gap-3 rounded-2xl bg-white p-4 shadow-lg sm:grid-cols-4">
-            <input
-              type="text"
-              placeholder="Origen"
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-pink-500"
-            />
-            <input
-              type="text"
-              placeholder="Destino"
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-pink-500"
-            />
-            <input
-              type="date"
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-pink-500"
-            />
-            <button
-              type="button"
-              className="rounded-lg bg-pink-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-pink-700"
-            >
-              Buscar pasajes
-            </button>
-          </form>
-        </div>
       </section>
 
       <main className="mx-auto max-w-5xl space-y-14 px-6 py-14">

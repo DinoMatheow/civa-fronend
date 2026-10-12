@@ -21,8 +21,9 @@ export const CivaLayout = () => {
     <div className="flex min-h-screen flex-col bg-white">
       {/* HEADER */}
       <header className="sticky top-0 z-20 bg-white shadow-md">
-        <Navbar />
-        <div className="mx-auto max-w-6xl px-4">
+
+    <Navbar />
+        {/* <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-center justify-between pt-3">
             <span className="text-3xl font-black italic tracking-tight text-[#572a85]">CIVA</span>
             <button
@@ -33,7 +34,7 @@ export const CivaLayout = () => {
             </button>
           </div>
           <TripSearchBar />
-        </div>
+        </div> */}
       </header>
  
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">

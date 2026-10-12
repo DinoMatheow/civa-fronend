@@ -1,3 +1,4 @@
+import { User } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -44,13 +45,7 @@ export const Navbar = () => {
             </li>
           ))}
           <li>
-            <button
-              type="button"
-              aria-label="Idioma"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-purple-200 bg-purple-50 text-xs"
-            >
-              🌐
-            </button>
+         <User size={20} />
           </li>
         </ul>
 
@@ -67,7 +62,7 @@ export const Navbar = () => {
           </svg>
         </button>
       </nav>
-          
+
       {/* Menú móvil */}
       {open && (
         <ul className="space-y-1 border-t border-purple-100 bg-white px-6 py-3 md:hidden">
