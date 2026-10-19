@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { searchTripsByPage } from "../../actions/get-trip-by-page";
 import { TripGrid } from "../../components/TripGrid";
+import { CustomPagination } from "../../../components/custom/CustomPagination";
 
 export const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -26,7 +27,10 @@ export const SearchPage = () => {
   if (isError) return <p>Error: {error.message}</p>;
   if (data?.content.length === 0) return <p>No hay viajes para esa ruta y fecha.</p>;
 
-  return <TripGrid trips={data?.content ?? []} />;
+  return <div>
+    <TripGrid trips={data?.content ?? []} />;
+    <CustomPagination totalPages={5}/>
+  </div> 
 };
 
 
