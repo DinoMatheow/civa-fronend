@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router';
 export const FilterSideBar = () => {
 
     const [searchParams] = useSearchParams();
-    const currentTypeSites  = searchParams.get("typeSites") 
+    const currentTypeSites  = searchParams.get("typeSites");
 
 
   return (

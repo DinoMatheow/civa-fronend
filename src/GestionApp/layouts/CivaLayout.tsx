@@ -8,15 +8,15 @@ export const CivaLayout = () => {
     <div className="flex min-h-screen flex-col bg-white">
       {/* HEADER */}
       <header className="sticky top-0 z-20 bg-white shadow-md">
-
-    <Navbar />
+        <Navbar />
       </header>
  
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      {/* Removemos max-w-6xl y px-4 de aquí para permitir dos columnas fluidas */}
+      <main className="flex-1 bg-gray-50 py-6">
         <Outlet />
       </main>
-        <CustomFooter />
-     
+
+      <CustomFooter />
     </div>
   );
 };

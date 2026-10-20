@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { searchTripsByPage } from "../../actions/get-trip-by-page";
 import { TripGrid } from "../../components/TripGrid";
 import { CustomPagination } from "../../../components/custom/CustomPagination";
+import { FilterSideBar } from "../../components/FilterSideBar";
 
 export const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -27,10 +28,27 @@ export const SearchPage = () => {
   if (isError) return <p>Error: {error.message}</p>;
   if (data?.content.length === 0) return <p>No hay viajes para esa ruta y fecha.</p>;
 
-  return <div>
-    <TripGrid trips={data?.content ?? []} />;
-    <CustomPagination totalPages={5}/>
-  </div> 
+  return (
+    <div className="min-h-screen py-6">
+      <div className="mx-auto flex max-w-7xl flex-row gap-8 px-4">
+        
+        <aside className="w-[325px] shrink-0">
+          <FilterSideBar />
+        </aside>
+
+        <main className="flex-1">
+          <div className="space-y-4">
+            <TripGrid trips={data?.content ?? []} />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <CustomPagination totalPages={5} /> 
+          </div>
+        </main>
+
+      </div>
+    </div>
+  )
 };
 
 
