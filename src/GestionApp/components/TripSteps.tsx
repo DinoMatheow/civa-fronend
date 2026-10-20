@@ -11,26 +11,20 @@ const steps = [
 
 export const TripSteps = ({ currentStep = 1 }: TripStepsProps) => {
   return (
-    <div className="flex h-[46px] w-full overflow-hidden rounded-full bg-[#cecece]">
+    <div className="flex h-[38px] w-full overflow-hidden rounded-full bg-[#cecece]">
       {steps.map((step) => {
         const isActive = step.number === currentStep;
 
         return (
           <div
             key={step.number}
-            className={`relative flex flex-1 items-center justify-center gap-3 rounded-full px-2 text-sm transition-colors ${
+            className={`relative flex flex-1 items-center justify-center gap-2 rounded-full px-1 text-xs transition-colors sm:text-sm ${
               isActive
                 ? "z-10 bg-[#592985] text-white"
                 : "text-white"
             }`}
           >
-            <span
-              className={`flex h-[25px] w-[25px] shrink-0 items-center justify-center rounded-full border ${
-                isActive
-                  ? "border-white/80 text-white"
-                  : "border-white/80 text-white"
-              }`}
-            >
+            <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full border border-white/80 text-xs">
               {step.number}
             </span>
 

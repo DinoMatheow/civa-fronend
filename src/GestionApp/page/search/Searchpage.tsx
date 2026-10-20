@@ -31,29 +31,24 @@ export const SearchPage = () => {
   if (data?.content.length === 0) return <p>No hay viajes para esa ruta y fecha.</p>;
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-row gap-8 px-4">
-      
-      <aside className="w-[325px] shrink-0">
-        <FilterSideBar />
-      </aside>
+  <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-5 lg:flex-row lg:gap-6">
+    <aside className="w-full shrink-0 lg:w-[280px]">
+      <FilterSideBar />
+    </aside>
 
-      <div className="flex-1">
-        
-        <TripSteps />
-        <SortingBanner /> 
+    <main className="min-w-0 flex-1 space-y-4">
+      <TripSteps currentStep={1} />
 
-        <div className="mt-4 space-y-4">
-          <TripGrid trips={data?.content ?? []} />
-        </div>
+      <SortingBanner />
 
-        <div className="mt-8 flex justify-center">
-          <CustomPagination totalPages={5} />
-        </div>
+      <TripGrid trips={data?.content ?? []} />
 
+      <div className="flex justify-center pt-3">
+        <CustomPagination totalPages={5} />
       </div>
-
-    </div>
-  );
+    </main>
+  </div>
+);
 };
 
 

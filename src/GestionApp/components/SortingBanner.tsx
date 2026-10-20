@@ -130,8 +130,9 @@ export const SortingBanner = ({
   };
 
   return (
-    <div className="flex min-h-[82px] w-full items-center justify-around gap-2 rounded-full bg-[#ec1977] px-3 py-3 text-white sm:px-6">
-      {options.map((option) => {
+
+<div className="flex min-h-[66px] w-full items-center justify-around gap-1 rounded-full bg-[#ec1977] px-2 py-2 text-white sm:px-4">
+    {options.map((option) => {
         const isSelected = selected === option.value;
 
         return (
