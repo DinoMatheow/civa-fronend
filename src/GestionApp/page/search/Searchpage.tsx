@@ -4,6 +4,8 @@ import { searchTripsByPage } from "../../actions/get-trip-by-page";
 import { TripGrid } from "../../components/TripGrid";
 import { CustomPagination } from "../../../components/custom/CustomPagination";
 import { FilterSideBar } from "../../components/FilterSideBar";
+import { SortingBanner } from "../../components/SortingBanner";
+import { TripSteps } from "../../components/TripSteps";
 
 export const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -37,9 +39,8 @@ export const SearchPage = () => {
 
       <div className="flex-1">
         
-        {/* <TabsComponent /> */}
-
-        {/* <SortingBanner /> */}
+        <TripSteps />
+        <SortingBanner /> 
 
         <div className="mt-4 space-y-4">
           <TripGrid trips={data?.content ?? []} />
