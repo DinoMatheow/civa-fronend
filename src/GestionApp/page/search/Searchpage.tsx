@@ -2,6 +2,10 @@ import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { searchTripsByPage } from "../../actions/get-trip-by-page";
 import { TripGrid } from "../../components/TripGrid";
+import { CustomPagination } from "../../../components/custom/CustomPagination";
+import { FilterSideBar } from "../../components/FilterSideBar";
+import { SortingBanner } from "../../components/SortingBanner";
+import { TripSteps } from "../../components/TripSteps";
 
 export const SearchPage = () => {
   const [searchParams] = useSearchParams();
@@ -26,7 +30,25 @@ export const SearchPage = () => {
   if (isError) return <p>Error: {error.message}</p>;
   if (data?.content.length === 0) return <p>No hay viajes para esa ruta y fecha.</p>;
 
-  return <TripGrid trips={data?.content ?? []} />;
+  return (
+  <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-5 lg:flex-row lg:gap-6">
+    <aside className="w-full shrink-0 lg:w-[280px]">
+      <FilterSideBar />
+    </aside>
+
+    <main className="min-w-0 flex-1 space-y-4">
+      <TripSteps currentStep={1} />
+
+      <SortingBanner />
+
+      <TripGrid trips={data?.content ?? []} />
+
+      <div className="flex justify-center pt-3">
+        <CustomPagination totalPages={5} />
+      </div>
+    </main>
+  </div>
+);
 };
 
 
